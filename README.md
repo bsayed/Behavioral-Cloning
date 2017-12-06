@@ -1,4 +1,4 @@
-#**Behavioral Cloning** 
+**Behavioral Cloning** 
 
 
 ---
@@ -28,7 +28,7 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/432/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-###Files Submitted & Code Quality
+### Files Submitted & Code Quality
 
 My project includes the following files:
 * model.py containing the script to create and train the model, the model.py can be run as explained in the following example:
@@ -49,7 +49,7 @@ python drive.py model.h5
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline 
 I used for training and validating the model, and it contains comments to explain how the code works.
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
 My model is a convolution neural network that consists of 3 convolution layers with 5x5 filters
  and 2x2 max pooling between them, then 2 convolution layers with 3x3 filters and one 2x2 max pooling layer between them.
@@ -92,7 +92,7 @@ vehicle, the change between the angles was smooth but when it came to sharp turn
  enough. This is also was true when I used ELU activation layer rather than ReLU, smooth angles but not
  good enough for sharp turns.
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 I have tried to use dropout layers in order to reduce over-fitting but my model wasn't over-fitting the data 
  since my generator was generating random images each time by apply random transformations. 
@@ -103,21 +103,21 @@ I used ```train_test_split()``` function with test ratio 20% of the training sam
 A
 The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track one and track two.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer, with learning rate of 1e-4 which yielded better validation accuracy
 than the default value of 0.001 (model.py line 177).
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. I used a combination of center lane driving, recovering from the left and right sides of the road specially in the first track
  however, I used the second track to balance the ratio of the left and right steering angles to the straight driving.
  
 For details about how I created the training data, see the next section. 
 
-###Model Architecture and Training Strategy
+### Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 The overall strategy for deriving a model architecture was to start with a known model that works for this kind of problem
 and start to tweak it as necessary.
@@ -151,7 +151,7 @@ I also tweaked the correction angle that is added or subtracted from left and ri
 
 At the end of the process, the vehicle is able to drive autonomously around both tracks without leaving the road.
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture:
 
@@ -184,7 +184,7 @@ The final model architecture:
 | (Dense)                         |  (1)            | 11                      
 
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 To capture good driving behavior, I first recorded 2 or 3 laps on track two using center lane driving. 
 Here is an example image of center lane driving in the second track:
